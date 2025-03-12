@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Footwear Folio Store</title>
+    <link rel="icon" type="image/png" href="img/shoes-favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header and Navbar-->
+    <header class="header">
+        
+        <button class="burger-menu" id="burger-menu">&#9776;</button>
+
+        <div class="header__left">
+            <nav class="header__logo">
+                <a href="#">
+                    <img src="img/footwear-logo.png" alt="Footwear brand logo" >
+                    <h2>Footwear Folio</h2>
+                </a>
+            </nav>
+
+            <ul class="header__nav" id="nav-menu">
+                <li><a href="#">Men's Shoes</a></li>
+                <li><a href="#">Women's Shoes</a></li>
+                <li><a href="#">Kids' Shoes</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+        </div>
+        
+        <div class="header__right">
+            <ul class="header__icons">
+                <li>
+                    <a href="#" class="header__search">
+                        <img src="img/search-icon.png" alt="Search">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="header__cart">
+                        <img src="img/cart-icon.png" alt="Shopping cart">
+                        <span class="cart-count">1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!--Main Section-->
+    <main>
+        <section class="main_left">
+            <img id="product-image" src="img/black.png" alt="Black Shoes">
+        </section>
+    
+        <section class="main_right">
+            <h1>Basketball Shoes for Men - High Cut, Cushioned Sports & Casual Sneakers</h1>
+            <p>Elevate your game with these high-cut basketball shoes for men, designed for superior cushioning and all-day comfort. Whether you're hitting the court or styling up your casual wear, these sneakers provide excellent support, durability, and traction. The breathable material keeps your feet cool, while the cushioned sole absorbs impact, making them perfect for both intense gameplay and everyday wear.</p>
+    
+            <p><strong>Color Options:</strong></p>
+            <div class="color-options">
+                <img src="img/black.png" alt="Black Shoes">
+                <img src="img/bluegreen.png" alt="Blue Green Shoes">
+                <img src="img/green.png" alt="Green Shoes">
+                <img src="img/purple.png" alt="Purple Shoes">
+            </div>
+            <p><strong>Price:</strong> Php 3,750</p>
+            <p><strong>Available Sizes:</strong></p>
+            <div class="size-options">
+                <span>39</span> <span>40</span> <span>41</span> <span>42</span>
+                <span>43</span> <span>44</span> <span>45</span>
+            </div>
+    
+            <p><strong>Quantity:</strong>
+                    <button id="decrementButton" class="quantity-btn">-</button>
+                    <span id="counter">1</span>
+                    <button id="incrementButton" class="quantity-btn">+</button>
+            </p>
+    
+    
+            <button id="resetButton" class="btn reset">Reset</button>
+            <button id="addToCart" class="btn addToCard">Add to Cart</button>
+        </section>
+    </main>
+    
+    <!--Features Section-->
+
+    <section class="features-section">
+        <div class="features">
+            <h2>Product Features</h2>
+            <ul>
+                <li>✔ <strong>High-Cut Ankle Support</strong> – Provides stability and protection for quick movements and jumps.</li>
+                <li>✔ <strong>Superior Cushioning</strong> – Soft, shock-absorbing midsole for all-day comfort and impact protection.</li>
+                <li>✔ <strong>Breathable Mesh Material</strong> – Enhances airflow to keep feet cool and dry during intense play.</li>
+                <li>✔ <strong>Durable Rubber Outsole</strong> – Ensures strong grip and traction on various surfaces.</li>
+                <li>✔ <strong>Lightweight & Flexible</strong> – Reduces foot fatigue for better agility and performance.</li>
+                <li>✔ <strong>Stylish & Versatile</strong> – Perfect for basketball, gym workouts, and casual everyday wear.</li>
+                <li>✔ <strong>Multiple Color Options</strong> – Available in Black, Blue-Green, Green, and Purple.</li>
+                <li>✔ <strong>Wide Size Range</strong> – Fits sizes 39 to 45 for a comfortable and secure fit.</li>
+            </ul>
+        </div>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ixuXjAmp93U?si=RFBzgTHgYZsaEZZV" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+<!--Related Products Section-->
+<section class="related-products">
+
+    <h3>Related Products</h3>
+
+    <div class="related-products-container">
+
+     
+        <div class="product-item">
+            <img src="img/related_products_red-shoes.webp" alt="Limited Edition 7th Generation Mandarin Duck Basketball Shoes" />
+            <div class="product-details">
+                <h3>Limited Edition 7th Generation Mandarin Duck Basketball Shoes</h3>
+                <p>Php 5,800</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="img/related_products_violet-shoes.webp" alt="Kobe 6 Protro Basketball Shoes" />
+            <div class="product-details">
+                <h3>Kobe 6 Protro Basketball Shoes</h3>
+                <p>Php 7,799</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="img/related_products_yellow-shoes.webp" alt="Dynamic Motion Low-Top Basketball Shoes" />
+            <div class="product-details">
+                <h3>Dynamic Motion Low-Top Basketball Shoes</h3>
+                <p>Php 1,485</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!--FAQ's Section-->
+<section class="faqs-section">
+    <h3>FAQs Addressing Returns</h3>
+    <div class="faq-items">
+      <article class="faq-item">
+        <button class="faq-toggle" aria-expanded="false">
+          What if the shoes don't fit? Can I return them?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, if the shoes don’t fit, you can return them. We offer a hassle-free return policy that lets you send back the shoes within the specified return period for a full refund or exchange.
+          </p>
+        </div>
+      </article>
+  
+      <article class="faq-item">
+        <button class="faq-toggle" aria-expanded="false">
+          What is the process for returning shoes that don't fit?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            If you need to return the shoes due to size issues, simply contact our customer service to initiate a return. You’ll receive a return authorization and instructions on how to package and ship the shoes back to us.
+          </p>
+        </div>
+      </article>
+  
+      <article class="faq-item">
+        <button class="faq-toggle" aria-expanded="false">
+          Are there any conditions or time limits for returns?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Returns are accepted within 30 days of purchase, provided the shoes are in their original, unworn condition with all tags and packaging intact. Please review our full return policy for complete details.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+    
+
+<!--Footer Section-->
+
+<footer>
+    <ul>
+        <li>Privacy Policy</li>
+        <li>Terms and Conditions</li>
+      </ul>
+
+      <p>&copy; 2025 Footwear Folio - Rommel Sevilla. All rights reserved.</p>      
+</footer>
+
+    <script src="./index.js"></script>
+
+
+</body>
+</html>
