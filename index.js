@@ -151,7 +151,7 @@ messageInput.insertAdjacentElement('afterend', messageDisplay);
 
 /** Form Validation */
 submitButton.addEventListener('click', function (event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent default form submission
   
   const nameValue = nameInput.value.trim();
   const emailValue = emailInput.value.trim();
@@ -189,7 +189,17 @@ submitButton.addEventListener('click', function (event) {
   }
 
   if (isValid) {
+    // Show success message without redirecting
     alert("Form submitted successfully!");
-    document.querySelector("form").submit(); // Submit the form
+    
+    // Optional: Clear form inputs after successful submission
+    nameInput.value = '';
+    emailInput.value = '';
+    messageInput.value = '';
+
+    // Clear inline messages
+    nameMessage.textContent = '';
+    emailMessage.textContent = '';
+    messageDisplay.textContent = 'Thank you! Your form has been submitted.';
   }
 });
