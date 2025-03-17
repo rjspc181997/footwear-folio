@@ -117,3 +117,79 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+/** Forms */
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email'); 
+const messageInput = document.getElementById('message');
+const submitButton = document.querySelector('button[type="submit"]');
+
+/** Name Validation */
+function isValidName(name) {
+  const namePattern = /^[a-zA-Z\s]+$/; // Allow only letters and spaces
+  return namePattern.test(name);
+}
+
+/** Email Validation */
+function isValidEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailPattern.test(email);
+}
+
+// Create inline error messages
+const nameMessage = document.createElement('p');
+nameMessage.style.color = 'red';
+nameInput.insertAdjacentElement('afterend', nameMessage);
+
+const emailMessage = document.createElement('p');
+emailMessage.style.color = 'red';
+emailInput.insertAdjacentElement('afterend', emailMessage);
+
+const messageDisplay = document.createElement('p');
+messageDisplay.style.color = 'green';
+messageInput.insertAdjacentElement('afterend', messageDisplay);
+
+/** Form Validation */
+submitButton.addEventListener('click', function (event) {
+  event.preventDefault(); // Prevent form submission
+  
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const messageValue = messageInput.value.trim();
+  
+  let isValid = true;
+
+  // Name validation
+  if (nameValue === '') {
+    nameMessage.textContent = 'Please enter your name.';
+    isValid = false;
+  } else if (!isValidName(nameValue)) {
+    nameMessage.textContent = 'Invalid name. Use only letters and spaces.';
+    isValid = false;
+  } else {
+    nameMessage.textContent = ''; // Clear error if valid
+  }
+
+  // Email validation
+  if (emailValue === '') {
+    emailMessage.textContent = 'Please enter your email.';
+    isValid = false;
+  } else if (!isValidEmail(emailValue)) {
+    emailMessage.textContent = 'Invalid email format. Enter a valid email.';
+    isValid = false;
+  } else {
+    emailMessage.textContent = ''; // Clear error if valid
+  }
+
+  // Message inline display
+  if (messageValue !== '') {
+    messageDisplay.textContent = `Message received: ${messageValue}`;
+  } else {
+    messageDisplay.textContent = ''; // Clear if empty
+  }
+
+  if (isValid) {
+    alert("Form submitted successfully!");
+    document.querySelector("form").submit(); // Submit the form
+  }
+});
