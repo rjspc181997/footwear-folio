@@ -126,14 +126,12 @@ const submitButton = document.querySelector('button[type="submit"]');
 
 /** Name Validation */
 function isValidName(name) {
-  const namePattern = /^[a-zA-Z\s]+$/; // Allow only letters and spaces
-  return namePattern.test(name);
+  return /^[a-zA-Z\s]+$/.test(name); // Allow only letters and spaces
 }
 
 /** Email Validation */
 function isValidEmail(email) {
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailPattern.test(email);
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
 // Create inline error messages
@@ -148,6 +146,11 @@ emailInput.insertAdjacentElement('afterend', emailMessage);
 const messageDisplay = document.createElement('p');
 messageDisplay.style.color = 'green';
 messageInput.insertAdjacentElement('afterend', messageDisplay);
+
+// Show message confirmation when user types
+messageInput.addEventListener('input', function () {
+  messageDisplay.textContent = messageInput.value.trim() !== '' ? "Your message is noted!" : '';
+});
 
 /** Form Validation */
 submitButton.addEventListener('click', function (event) {
@@ -181,18 +184,10 @@ submitButton.addEventListener('click', function (event) {
     emailMessage.textContent = ''; // Clear error if valid
   }
 
-  // Message inline display
-  if (messageValue !== '') {
-    messageDisplay.textContent = `Message received: ${messageValue}`;
-  } else {
-    messageDisplay.textContent = ''; // Clear if empty
-  }
-
   if (isValid) {
-    // Show success message without redirecting
     alert("Form submitted successfully!");
-    
-    // Optional: Clear form inputs after successful submission
+
+    // Clear form inputs
     nameInput.value = '';
     emailInput.value = '';
     messageInput.value = '';
@@ -200,6 +195,6 @@ submitButton.addEventListener('click', function (event) {
     // Clear inline messages
     nameMessage.textContent = '';
     emailMessage.textContent = '';
-    messageDisplay.textContent = 'Thank you! Your form has been submitted.';
+    messageDisplay.textContent = ''; 
   }
 });
